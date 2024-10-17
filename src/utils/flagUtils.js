@@ -13,9 +13,7 @@ const preferredCountryByCurrency = {
   XAF: 'Cameroon',            
   XOF: 'Senegal',             
   NZD: 'New Zealand',         
-  ZAR: 'South Africa',        
-  EUR: 'Germany',             
-  USD: 'United States',       
+  ZAR: 'South Africa',              
 };
 
 // This is a utility function that helps get the Alpha-2 country code

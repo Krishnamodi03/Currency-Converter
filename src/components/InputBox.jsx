@@ -1,6 +1,7 @@
-import React, { useState, useId } from 'react';
+import { useState, useId } from 'react';
 import { getFlagUrlByCurrencyCode } from '../utils/flagUtils';
-
+import PropTypes from 'prop-types';
+ 
 const InputBox = ({
   label,
   amount,
@@ -9,8 +10,7 @@ const InputBox = ({
   currrencyOptions = [],
   selectCurrency = "",
   amountDiable = false,
-  currencyDisable = false,
-  className = ""
+  className = "",
 }) => {
   const amountInputId = useId();
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -93,4 +93,19 @@ const InputBox = ({
   );
 };
 
+InputBox.propTypes = {
+  label: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
+  onAmountChange: PropTypes.func,
+  onCurrencyChange: PropTypes.func.isRequired,
+  currrencyOptions: PropTypes.arrayOf(PropTypes.string).isRequired,
+  selectCurrency: PropTypes.string.isRequired,
+  amountDiable: PropTypes.bool,
+  currencyDisable: PropTypes.bool,
+  className: PropTypes.string,
+};
+
+InputBox.defaultProps = {
+  className: "",
+};
 export default InputBox;
